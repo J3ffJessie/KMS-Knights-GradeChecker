@@ -54,7 +54,9 @@ const GradeCheck = () => {
   // }
 
   function checkGrade() {
-    let final = (gradeWanted -currentGrade*(100.0 - gradeWeight)/ 100.0 / (gradeWeight/ 100.0));
+
+    let final=(gradeWanted-currentGrade * (100.0 - gradeWeight)/ 100.0)/(gradeWeight/ 100.0)
+    // let final = (gradeWanted -currentGrade*(100.0 - gradeWeight)/ 100.0 / (gradeWeight/ 100.0));
     setFinalGrade(Number(final.toFixed(2)));
     console.log(finalGrade);
   };
