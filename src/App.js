@@ -68,8 +68,8 @@ const GradeCheck = () => {
   return (
     <Container className={classes.root} display="flex">
     <form className={classes.form} noValidate autoComplete="off" justifyContent="center">
-      <TextField required id="standard-required" label="Your Current Grade % " onChange= {(event) => setCurrentGrade(event.target.value)} />
-      <TextField required id="standard-required" label="The Grade You Want." onChange = {(event) => setGradeWanted(event.target.value)} /> 
+      <TextField type='number' required id="standard-required" label="Your Current Grade % " onChange= {(event) => setCurrentGrade(event.target.value)} />
+      <TextField type='number' required id="standard-required" label="The Grade You Want." onChange = {(event) => setGradeWanted(event.target.value)} /> 
 
       <RadioGroup className={classes.radio} >
       <FormControlLabel value="Test/Quiz" control={<Radio />} label="Test/Quiz" onClick={(event) => setGradeWeight('70')} />
