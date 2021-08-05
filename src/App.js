@@ -44,24 +44,22 @@ const GradeCheck = () => {
 
   const classes = useStyles();
 
-  const [currentGrade, setCurrentGrade] = useState('');
-  const [gradeWanted, setGradeWanted] = useState('');
-  const [gradeWeight, setGradeWeight] = useState('');
-  const [finalGrade, setFinalGrade] = useState();
+  const [currentGrade, setCurrentGrade] = useState(0);
+  const [gradeWanted, setGradeWanted] = useState(0);
+  const [gradeWeight, setGradeWeight] = useState(0);
+  const [finalGrade, setFinalGrade] = useState(0);
 
   // const handleChange = (event) => {
   //   event.preventDefault();
   // }
 
-  function checkGrade(currentGrade, gradeWanted, gradeWeight) {
+  function handleSubmit(currentGrade, gradeWanted, gradeWeight, finalGrade) {
     let final = (gradeWanted -currentGrade*(100.0 - gradeWeight)/ 100.0 / (gradeWeight/ 100.0));
-    setFinalGrade(final.toFixed(2));
+    setFinalGrade(Number(final.toFixed(2)));
+    console.log(finalGrade);
   };
 
-  function handleSubmit() {
-    checkGrade();
-    console.log(finalGrade);
-  }
+
 
 
 
@@ -70,7 +68,7 @@ const GradeCheck = () => {
     <form className={classes.form} noValidate autoComplete="off" justifyContent="center">
       <TextField type='number' required id="standard-required" label="Your Current Grade % " onChange= {(event) => setCurrentGrade(event.target.value)} />
       <TextField type='number' required id="standard-required" label="The Grade You Want." onChange = {(event) => setGradeWanted(event.target.value)} /> 
-
+      
       <RadioGroup className={classes.radio} >
       <FormControlLabel value="Test/Quiz" control={<Radio />} label="Test/Quiz" onClick={(event) => setGradeWeight('70')} />
       <FormControlLabel value="Classwork/Homework" control={<Radio />} label="Class/Homework" onClick={(event) => setGradeWeight('30')} />
@@ -85,11 +83,9 @@ const GradeCheck = () => {
 
     <Box>
       <Typography variant='h3' component='h5' className={classes.form}>
-        You Need To Score : 
+        You Need To Score : {finalGrade}
       </Typography>
-      <Typography variant='h5' component='h6' className={classes.form}>
-        {finalGrade}
-      </Typography>
+      
     </Box>
     </Container>
   );
