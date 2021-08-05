@@ -53,7 +53,7 @@ const GradeCheck = () => {
   //   event.preventDefault();
   // }
 
-  function handleSubmit(currentGrade, gradeWanted, gradeWeight, finalGrade) {
+  function handleSubmit({currentGrade}, {gradeWanted}, {gradeWeight}) {
     let final = (gradeWanted -currentGrade*(100.0 - gradeWeight)/ 100.0 / (gradeWeight/ 100.0));
     setFinalGrade(Number(final.toFixed(2)));
     console.log(finalGrade);
