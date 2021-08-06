@@ -6,7 +6,7 @@ import { Button, ButtonGroup, Container, RadioGroup } from '@material-ui/core';
 import { FormControlLabel } from '@material-ui/core';
 import { Radio } from '@material-ui/core';
 import { Box, Typography } from '@material-ui/core';
-
+import { InputAdornment } from '@material-ui/core';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -38,6 +38,9 @@ const useStyles = makeStyles((theme) => ({
     paddingTop: '25px',
     width: 'auto',
   },
+  button: {
+    borderRadius: '50px',
+  },
 }));
 
 const GradeCheck = () => {
@@ -56,11 +59,15 @@ const GradeCheck = () => {
   function checkGrade() {
 
     let final=(gradeWanted-currentGrade * (100.0 - gradeWeight)/ 100.0)/(gradeWeight/ 100.0)
-    if(final > 100) {
-      setFinalGrade(100)    
-    } else {
-      setFinalGrade(Number(final.toFixed(2)));
-    }
+    
+    // This code will keep the finalGrade from going past 100% needed on the next assignment.  Currently it is requested that the %
+    // go above 100 so that students understand that they will need more than one assignment or test to raise their grade.
+    // if(final > 100) {
+    //   setFinalGrade(100)    
+    // } else {
+    //   setFinalGrade(Number(final.toFixed(2)));
+    // }
+    setFinalGrade(Number(final.toFixed(2)));
   };
 
   const handleSubmit = event => {
@@ -73,8 +80,12 @@ const GradeCheck = () => {
   return (
     <Container className={classes.root} display="flex">
     <form className={classes.form} noValidate autoComplete="off" justifyContent="center">
-      <TextField  required id="standard-required" label="Your Current Grade % "  min= '0' onChange= {(event) => setCurrentGrade(event.target.value)} />
-      <TextField  required id="standard-required" label="The Grade You Want." min='0' onChange = {(event) => setGradeWanted(event.target.value)} /> 
+      <TextField  required id="standard-required" label="Your Current Grade"  onChange= {(event) => setCurrentGrade(event.target.value)} InputProps={{
+        endAdornment: <InputAdornment position="end">%</InputAdornment>
+      }} />
+      <TextField  required id="standard-required" label="The Grade You Want" onChange = {(event) => setGradeWanted(event.target.value)} InputProps={{
+        endAdornment: <InputAdornment position="end">%</InputAdornment>
+      }} /> 
       
       <RadioGroup className={classes.radio} >
       <FormControlLabel value="Test/Quiz" control={<Radio />} label="Test/Quiz" onClick={(event) => setGradeWeight('70')} />
@@ -83,9 +94,9 @@ const GradeCheck = () => {
     </form>
 
     <ButtonGroup className={classes.buttonGroup}>
-    <Button variant='contained' color='primary' onClick={handleSubmit}>Check Grade</Button>
+    <Button className={classes.button} size="small" variant='contained' color='primary' onClick={handleSubmit}>Check Grade</Button>
 
-    <Button variant='contained' color='secondary'>Reset</Button>
+    <Button className={classes.button} size="small" variant='contained' color='secondary'>Reset</Button>
     </ButtonGroup>
 
     <Box>
