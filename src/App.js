@@ -43,6 +43,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+
 const GradeCheck = () => {
 
   const classes = useStyles();
@@ -52,9 +53,6 @@ const GradeCheck = () => {
   const [gradeWeight, setGradeWeight] = useState(0);
   const [finalGrade, setFinalGrade] = useState(0);
 
-  // const handleChange = (event) => {
-  //   event.preventDefault();
-  // }
 
   function checkGrade() {
 
@@ -62,6 +60,7 @@ const GradeCheck = () => {
     
     // This code will keep the finalGrade from going past 100% needed on the next assignment.  Currently it is requested that the %
     // go above 100 so that students understand that they will need more than one assignment or test to raise their grade.
+    
     // if(final > 100) {
     //   setFinalGrade(100)    
     // } else {
@@ -73,8 +72,7 @@ const GradeCheck = () => {
   const handleSubmit = event => {
     event.preventDefault();
     checkGrade();
-  }
-
+    }
 
 
   return (
@@ -95,8 +93,6 @@ const GradeCheck = () => {
 
     <ButtonGroup className={classes.buttonGroup}>
     <Button className={classes.button} size="small" variant='contained' color='primary' onClick={handleSubmit}>Check Grade</Button>
-
-    <Button className={classes.button} size="small" variant='contained' color='secondary'>Reset</Button>
     </ButtonGroup>
 
     <Box>
