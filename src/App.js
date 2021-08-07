@@ -1,4 +1,5 @@
 import React from 'react';
+import clsx from 'clsx';
 import TextField from '@material-ui/core/TextField';
 import {makeStyles} from '@material-ui/core/styles';
 import { useState } from 'react';
@@ -6,7 +7,7 @@ import { Button, ButtonGroup, Container, RadioGroup } from '@material-ui/core';
 import { FormControlLabel } from '@material-ui/core';
 import { Radio } from '@material-ui/core';
 import { Box, Typography } from '@material-ui/core';
-
+import { InputAdornment } from '@material-ui/core';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -15,6 +16,7 @@ const useStyles = makeStyles((theme) => ({
       margin: theme.spacing(1),
       width: '25ch',
       position:'relative',
+      color: '#a69540',
     },
   },
   form: {
@@ -22,7 +24,15 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'center',
     alignItems: 'center',
     flexDirection: 'column',
-    paddingTop: '80px',
+    paddingTop: '70px',
+  },
+  typography: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexDirection: 'column',
+    paddingTop: '45px',
+    color: '#a69540',    
   },
   radio: {
     display: 'flex',
@@ -38,7 +48,64 @@ const useStyles = makeStyles((theme) => ({
     paddingTop: '25px',
     width: 'auto',
   },
+
+  //custom radio button styling
+  icon: {
+    borderRadius: '50%',
+    width: 16,
+    height: 16,
+    boxShadow: 'inset 0 0 0 1px rgba(16, 22, 26, .2), inset 0 -1px 0 rgba(16, 22, 26, .1)',
+    backgroundColor: '#f5f8fa',
+    backgroungImage: 'lineear-gradient(180deg, hsla(0, 0%, 100%, .8), hsla(0, 0%, 100%, 0))',
+    '$root.Mui-focusVisible &': {
+      outline: '2px auto #000',
+      outlineOffset: 2,
+    },
+    'input:hover ~ &': {
+      backgroundColor: '##a69540',
+    },
+    'input:disabled ~ &': {
+      boxShadow: 'none',
+      background: 'rgba(206, 217, 224, .5)',
+    },
+  },
+  checkedIcon: {
+    backgroundColor: '#a69540',
+    backgroundImage: 'linear-gradient(180deg, hsla(0, 0%, 100%, .1), hsla(0, 0%, 100%, 0))',
+    '&:before': {
+      display: 'block',
+      width: 16,
+      height: 16,
+      backgroundImage: 'radial-gradient(#fff, #fff 28%, transparent 32%)',
+      content: '""',
+    },
+    'input:hover ~ &': {
+      backgroundColor: '#a69540',
+    },
+  },
+  button: {
+    backgroundColor: '#a69540',
+  },
 }));
+
+//creating the custom radio button style
+function StyledRadio(props) {
+  const classes = useStyles();
+
+  return(
+    <Radio
+      className={classes.root}
+      disableRipple
+      color='default'
+      checkedIcon={<span className={clsx(classes.icon, classes.checkedIcon)} />}
+      icon={<span className={classes.icon} />}
+      {...props}
+      />
+  );
+}
+
+
+//This is the start of the actual component for the grade calculator
 
 const GradeCheck = () => {
 
@@ -49,48 +116,54 @@ const GradeCheck = () => {
   const [gradeWeight, setGradeWeight] = useState(0);
   const [finalGrade, setFinalGrade] = useState(0);
 
-  // const handleChange = (event) => {
-  //   event.preventDefault();
-  // }
 
   function checkGrade() {
 
     let final=(gradeWanted-currentGrade * (100.0 - gradeWeight)/ 100.0)/(gradeWeight/ 100.0)
-    if(final > 100) {
-      setFinalGrade(100)    
-    } else {
-      setFinalGrade(Number(final.toFixed(2)));
-    }
+    
+    // This code will keep the finalGrade from going past 100% needed on the next assignment.  Currently it is requested that the %
+    // go above 100 so that students understand that they will need more than one assignment or test to raise their grade.
+    
+    // if(final > 100) {
+    //   setFinalGrade(100)    
+    // } else {
+    //   setFinalGrade(Number(final.toFixed(2)));
+    // }
+    setFinalGrade(Number(final.toFixed(2)));
   };
 
   const handleSubmit = event => {
     event.preventDefault();
     checkGrade();
-  }
-
+    }
 
 
   return (
     <Container className={classes.root} display="flex">
     <form className={classes.form} noValidate autoComplete="off" justifyContent="center">
-      <TextField  required id="standard-required" label="Your Current Grade % "  min= '0' onChange= {(event) => setCurrentGrade(event.target.value)} />
-      <TextField  required id="standard-required" label="The Grade You Want." min='0' onChange = {(event) => setGradeWanted(event.target.value)} /> 
+      <TextField  required id="standard-required" label="Your Current Grade" onChange= {(event) => setCurrentGrade(event.target.value)} InputProps={{
+        endAdornment: <InputAdornment position="end">%</InputAdornment>
+      }} />
+      <TextField  required id="standard-required" label="The Grade You Want" onChange = {(event) => setGradeWanted(event.target.value)} InputProps={{
+        endAdornment: <InputAdornment position="end">%</InputAdornment>
+      }} /> 
       
       <RadioGroup className={classes.radio} >
-      <FormControlLabel value="Test/Quiz" control={<Radio />} label="Test/Quiz" onClick={(event) => setGradeWeight('70')} />
-      <FormControlLabel value="Classwork/Homework" control={<Radio />} label="Class/Homework" onClick={(event) => setGradeWeight('30')} />
+      <FormControlLabel value="Test/Quiz" control={<StyledRadio />} label="Test/Quiz" onClick={(event) => setGradeWeight('70')} />
+      <FormControlLabel value="Classwork/Homework" control={<StyledRadio />} label="Class/Homework" onClick={(event) => setGradeWeight('30')} />
       </RadioGroup>
     </form>
 
     <ButtonGroup className={classes.buttonGroup}>
-    <Button variant='contained' color='primary' onClick={handleSubmit}>Check Grade</Button>
-
-    <Button variant='contained' color='secondary'>Reset</Button>
+    <Button className={classes.button} size="small" variant='contained' color='primary' onClick={handleSubmit}>Check Grade</Button>
     </ButtonGroup>
 
     <Box>
-      <Typography variant='h3' component='h5' className={classes.form}>
-        You Need To Score : {finalGrade}
+      <Typography variant='h3' component='h5' className={classes.typography}>
+        You Need To Score:
+      </Typography>
+      <Typography variant='h2' component='h2' className={classes.typography}>
+      {finalGrade}
       </Typography>
       
     </Box>
