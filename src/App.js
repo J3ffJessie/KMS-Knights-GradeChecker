@@ -83,6 +83,9 @@ const useStyles = makeStyles((theme) => ({
       backgroundColor: '#a69540',
     },
   },
+  button: {
+    backgroundColor: '#a69540',
+  },
 }));
 
 //creating the custom radio button style
@@ -157,7 +160,7 @@ const GradeCheck = () => {
 
     <Box>
       <Typography variant='h3' component='h5' className={classes.typography}>
-        You Need To Score :
+        You Need To Score:
       </Typography>
       <Typography variant='h2' component='h2' className={classes.typography}>
       {finalGrade}

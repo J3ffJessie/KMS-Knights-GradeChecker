@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     position: 'relative',
     justifyContent: 'center',
-    fontSize:'3rem',
+    fontSize:'1.5rem',
     textShadow: '-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000, -2px 0 0 #000, 2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000',
     fontFamily: 'Rye, cursive', 
   },
