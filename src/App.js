@@ -21,9 +21,9 @@ const useStyles = makeStyles((theme) => ({
     },
     '& .MuiInputBase-root': {
       color: '#a69540',
-      fontWeight: 'bolder',      
+      fontWeight: 'bolder'      
     },
-  },
+},
   form: {
     display: 'flex',
     justifyContent: 'center',
@@ -31,6 +31,9 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'column',
     paddingTop: '70px',
     color: '#a69540',
+  },
+  container: {
+    height: '90vh',
   },
   input: {
     width: 'auto',
@@ -51,7 +54,7 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'column',
     paddingTop: '45px',
     color: '#a69540', 
-    paddingBottom: '30px', 
+    paddingBottom: '5px', 
   },
   radio: {
     display: 'flex',
@@ -163,7 +166,7 @@ const GradeCheck = () => {
 
 
   return (
-    <Container className={classes.root} display="flex">
+    <Container className={classes.container} display="flex">
     <form className={classes.form} noValidate autoComplete="off" justifyContent="center">
       <TextField className={classes.input}  required id="standard-required" label="Your Current Grade" onChange= {(event) => setCurrentGrade(event.target.value)} InputProps={{
         endAdornment: <InputAdornment position="end">%</InputAdornment>

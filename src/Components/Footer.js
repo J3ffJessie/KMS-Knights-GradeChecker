@@ -18,8 +18,9 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
     color:'#a69540',
     display: 'flex',
-    position: 'relative',
+    position: 'sticky',
     justifyContent: 'center',
+    alignItems: 'center',
     fontSize:'1rem',
     textShadow: '-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000, -2px 0 0 #000, 2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000',
     fontFamily: 'Rye, cursive', 
@@ -37,7 +38,7 @@ export default function Footer() {
       <AppBar position='static' className={classes.root}>
         <Toolbar>
           <Typography variant="p" className={classes.title}>
-            Made for Students, in collaboration with Mrs. Jessie by Mr.Jessie
+            Made for Students with 💙 by Mrs & Mr Jessie
           </Typography>
         </Toolbar>
       </AppBar>
