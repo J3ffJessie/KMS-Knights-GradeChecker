@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     position: 'relative',
     justifyContent: 'center',
-    fontSize:'1.5rem',
+    fontSize:'4rem',
     textShadow: '-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000, -2px 0 0 #000, 2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000',
     fontFamily: 'Rye, cursive', 
   },
@@ -29,8 +29,8 @@ export default function Header() {
     <div className={classes.root}>
       <AppBar position="static" className={classes.root}>
         <Toolbar>
-          <Typography variant="h6" className={classes.title}>
-            KNIGHT STRONG
+          <Typography variant="h1" className={classes.title}>
+            KNIGHTS
           </Typography>
         </Toolbar>
       </AppBar>

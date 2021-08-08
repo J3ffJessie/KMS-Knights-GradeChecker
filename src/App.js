@@ -26,6 +26,9 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'column',
     paddingTop: '70px',
   },
+  input: {
+    width: 'auto',
+  },
   typography: {
     display: 'flex',
     justifyContent: 'center',
@@ -85,6 +88,9 @@ const useStyles = makeStyles((theme) => ({
   },
   button: {
     backgroundColor: '#a69540',
+    '&: hover': {
+      backgroundColor: '#a69540',
+    },
   },
 }));
 
@@ -141,10 +147,10 @@ const GradeCheck = () => {
   return (
     <Container className={classes.root} display="flex">
     <form className={classes.form} noValidate autoComplete="off" justifyContent="center">
-      <TextField  required id="standard-required" label="Your Current Grade" onChange= {(event) => setCurrentGrade(event.target.value)} InputProps={{
+      <TextField className={classes.input}  required id="standard-required" label="Your Current Grade" onChange= {(event) => setCurrentGrade(event.target.value)} InputProps={{
         endAdornment: <InputAdornment position="end">%</InputAdornment>
       }} />
-      <TextField  required id="standard-required" label="The Grade You Want" onChange = {(event) => setGradeWanted(event.target.value)} InputProps={{
+      <TextField className={classes.input}  required id="standard-required" label="The Grade You Want" onChange = {(event) => setGradeWanted(event.target.value)} InputProps={{
         endAdornment: <InputAdornment position="end">%</InputAdornment>
       }} /> 
       
@@ -160,10 +166,10 @@ const GradeCheck = () => {
 
     <Box>
       <Typography variant='h3' component='h5' className={classes.typography}>
-        You Need To Score:
+        You Need a:
       </Typography>
       <Typography variant='h2' component='h2' className={classes.typography}>
-      {finalGrade}
+      {finalGrade}%
       </Typography>
       
     </Box>
