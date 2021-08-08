@@ -12,11 +12,16 @@ import { InputAdornment } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
   root: {
+    color: '#a69540',
     '& .MuiTextField-root': {
       margin: theme.spacing(1),
       width: '25ch',
       position:'relative',
       color: '#a69540',
+    },
+    '& .MuiInputBase-root': {
+      color: '#a69540',
+      fontWeight: 'bolder',      
     },
   },
   form: {
@@ -25,9 +30,11 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     flexDirection: 'column',
     paddingTop: '70px',
+    color: '#a69540',
   },
   input: {
     width: 'auto',
+    color: '#a69540',
   },
   typography: {
     display: 'flex',
@@ -35,7 +42,16 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     flexDirection: 'column',
     paddingTop: '45px',
-    color: '#a69540',    
+    color: '#a69540', 
+  },
+  typographyGrade: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexDirection: 'column',
+    paddingTop: '45px',
+    color: '#a69540', 
+    paddingBottom: '30px', 
   },
   radio: {
     display: 'flex',
@@ -88,8 +104,10 @@ const useStyles = makeStyles((theme) => ({
   },
   button: {
     backgroundColor: '#a69540',
-    '&: hover': {
+    color: '#000',
+    '&:hover': {
       backgroundColor: '#a69540',
+      color: '#000',
     },
   },
 }));
@@ -161,14 +179,16 @@ const GradeCheck = () => {
     </form>
 
     <ButtonGroup className={classes.buttonGroup}>
-    <Button className={classes.button} size="small" variant='contained' color='primary' onClick={handleSubmit}>Check Grade</Button>
+    <Button classes={{
+      root: classes.button,
+      hover: classes.hover,}} size="small" variant='contained' onClick={handleSubmit}>Check Grade</Button>
     </ButtonGroup>
 
     <Box>
       <Typography variant='h3' component='h5' className={classes.typography}>
         You Need a:
       </Typography>
-      <Typography variant='h2' component='h2' className={classes.typography}>
+      <Typography variant='h2' component='h2' className={classes.typographyGrade}>
       {finalGrade}%
       </Typography>
       
