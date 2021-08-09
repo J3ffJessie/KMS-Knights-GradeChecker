@@ -5,7 +5,6 @@ This application was built in collaboration with my Wife.  She voiced concern ov
 ## Building the project
 Tech used for building this project includes:
 
-![GitHub Actions](https://img.shields.io/static/v1?style=for-the-badge&message=GitHub+Actions&color=2088FF&logo=GitHub+Actions&logoColor=FFFFFF&label=)
 ![Material-UI](https://img.shields.io/static/v1?style=for-the-badge&message=Material-UI&color=0081CB&logo=Material-UI&logoColor=FFFFFF&label=)
 
 ![React](https://img.shields.io/static/v1?style=for-the-badge&message=React&color=222222&logo=React&logoColor=61DAFB&label=)
@@ -16,12 +15,6 @@ As well as just plain Maths(Yuck!).  All mathematical calculations were confirme
 What would my next steps with this application be?  Well I would love to integrate with the schools grading platform [PowerSchool](https://www.powerschool.com/) and utilize their API to allow the students to either pull their grade within the application using their API or to auto populate their grade by utilizing OAUTH and logging the students into Powerschool and then allowing them to calculate their grade from there.
 
 The only downfall is that the API for PowerSchool is protected and can only be accessed by School Admin or Teachers and Staff.  Could I possibly swing using my Wife's credentials to gain access and do what I want to do? Possibly, but it isn't worth risking her career to integrate something so minial.  I have reached out to inquire about access individually as a developer, but have yet to hear back from their IT team.
-
-## Visualization of the Repository
-
-![Visualization of the Codebase](images/diagram.svg)
-
-
 
 <details>
 <summary>Setup and Running This Web Application</summary>
