@@ -12,19 +12,32 @@ import { InputAdornment } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
   root: {
+    color: '#a69540',
     '& .MuiTextField-root': {
       margin: theme.spacing(1),
       width: '25ch',
       position:'relative',
       color: '#a69540',
     },
-  },
+    '& .MuiInputBase-root': {
+      color: '#a69540',
+      fontWeight: 'bolder'      
+    },
+},
   form: {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
     flexDirection: 'column',
     paddingTop: '70px',
+    color: '#a69540',
+  },
+  container: {
+    height: '90vh',
+  },
+  input: {
+    width: 'auto',
+    color: '#a69540',
   },
   typography: {
     display: 'flex',
@@ -32,7 +45,16 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     flexDirection: 'column',
     paddingTop: '45px',
-    color: '#a69540',    
+    color: '#a69540', 
+  },
+  typographyGrade: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexDirection: 'column',
+    paddingTop: '45px',
+    color: '#a69540', 
+    paddingBottom: '5px', 
   },
   radio: {
     display: 'flex',
@@ -85,6 +107,11 @@ const useStyles = makeStyles((theme) => ({
   },
   button: {
     backgroundColor: '#a69540',
+    color: '#000',
+    '&:hover': {
+      backgroundColor: '#a69540',
+      color: '#000',
+    },
   },
 }));
 
@@ -139,12 +166,12 @@ const GradeCheck = () => {
 
 
   return (
-    <Container className={classes.root} display="flex">
+    <Container className={classes.container} display="flex">
     <form className={classes.form} noValidate autoComplete="off" justifyContent="center">
-      <TextField  required id="standard-required" label="Your Current Grade" onChange= {(event) => setCurrentGrade(event.target.value)} InputProps={{
+      <TextField className={classes.input}  required id="standard-required" label="Your Current Grade" onChange= {(event) => setCurrentGrade(event.target.value)} InputProps={{
         endAdornment: <InputAdornment position="end">%</InputAdornment>
       }} />
-      <TextField  required id="standard-required" label="The Grade You Want" onChange = {(event) => setGradeWanted(event.target.value)} InputProps={{
+      <TextField className={classes.input}  required id="standard-required" label="The Grade You Want" onChange = {(event) => setGradeWanted(event.target.value)} InputProps={{
         endAdornment: <InputAdornment position="end">%</InputAdornment>
       }} /> 
       
@@ -155,15 +182,17 @@ const GradeCheck = () => {
     </form>
 
     <ButtonGroup className={classes.buttonGroup}>
-    <Button className={classes.button} size="small" variant='contained' color='primary' onClick={handleSubmit}>Check Grade</Button>
+    <Button classes={{
+      root: classes.button,
+      hover: classes.hover,}} size="small" variant='contained' onClick={handleSubmit}>Check Grade</Button>
     </ButtonGroup>
 
     <Box>
       <Typography variant='h3' component='h5' className={classes.typography}>
-        You Need To Score:
+        You Need a:
       </Typography>
-      <Typography variant='h2' component='h2' className={classes.typography}>
-      {finalGrade}
+      <Typography variant='h2' component='h2' className={classes.typographyGrade}>
+      {finalGrade}%
       </Typography>
       
     </Box>

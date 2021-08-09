@@ -1,3 +1,32 @@
+# Knight Grade Check
+
+This application was built in collaboration with my Wife.  She voiced concern over how much time was spent going over grades with students and how their next assignment or test would impact their grade.  She asked if I could do anything to help her out (which of course I said I could).  I set out and built a simple concept in HTML, CSS and JS [Here](https://github.com/J3ffJessie/KMS-Grade-Checker).  After showing her this example and explaining what changes I would make and how I would go about it, she approved and I set out and got to work.
+
+## Building the project
+Tech used for building this project includes:
+
+![GitHub Actions](https://img.shields.io/static/v1?style=for-the-badge&message=GitHub+Actions&color=2088FF&logo=GitHub+Actions&logoColor=FFFFFF&label=)
+![Material-UI](https://img.shields.io/static/v1?style=for-the-badge&message=Material-UI&color=0081CB&logo=Material-UI&logoColor=FFFFFF&label=)
+
+![React](https://img.shields.io/static/v1?style=for-the-badge&message=React&color=222222&logo=React&logoColor=61DAFB&label=)
+
+As well as just plain Maths(Yuck!).  All mathematical calculations were confirmed by inquiring with my Wife who is a Math Teacher.
+
+# Next Steps
+What would my next steps with this application be?  Well I would love to integrate with the schools grading platform [PowerSchool](https://www.powerschool.com/) and utilize their API to allow the students to either pull their grade within the application using their API or to auto populate their grade by utilizing OAUTH and logging the students into Powerschool and then allowing them to calculate their grade from there.
+
+The only downfall is that the API for PowerSchool is protected and can only be accessed by School Admin or Teachers and Staff.  Could I possibly swing using my Wife's credentials to gain access and do what I want to do? Possibly, but it isn't worth risking her career to integrate something so minial.  I have reached out to inquire about access individually as a developer, but have yet to hear back from their IT team.
+
+<details>
+<summary>Visualization of This Application</summary>
+![Visualization of the Codebase](./diagram.svg)
+</details>
+
+
+<details>
+<summary>Setup and Running This Web Application</summary>
+<br>
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -68,3 +97,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `yarn build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+</details>
