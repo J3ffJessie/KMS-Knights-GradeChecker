@@ -17,10 +17,10 @@ What would my next steps with this application be?  Well I would love to integra
 
 The only downfall is that the API for PowerSchool is protected and can only be accessed by School Admin or Teachers and Staff.  Could I possibly swing using my Wife's credentials to gain access and do what I want to do? Possibly, but it isn't worth risking her career to integrate something so minial.  I have reached out to inquire about access individually as a developer, but have yet to hear back from their IT team.
 
-<details>
-<summary>Visualization of This Application</summary>
-![Visualization of the Codebase](images/diagram.svg)
-</details>
+## Visualization of the Repository
+
+![Visualization of the Codebase](./diagram.svg)
+
 
 
 <details>
