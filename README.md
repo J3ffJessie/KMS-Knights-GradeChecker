@@ -19,7 +19,7 @@ The only downfall is that the API for PowerSchool is protected and can only be a
 
 ## Visualization of the Repository
 
-![Visualization of the Codebase](/images/diagram.svg)
+![Visualization of the Codebase](images/diagram.svg)
 
 
 
