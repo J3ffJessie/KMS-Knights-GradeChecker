@@ -38,7 +38,7 @@ export default function Footer() {
       <AppBar position='static' className={classes.root}>
         <Toolbar>
           <Typography variant="p" className={classes.title}>
-            Made for Students with 💙 by Mrs & Mr Jessie
+            Made for Students with 💙 by Mrs. Jessie
           </Typography>
         </Toolbar>
       </AppBar>
