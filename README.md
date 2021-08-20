@@ -16,6 +16,14 @@ What would my next steps with this application be?  Well I would love to integra
 
 The only downfall is that the API for PowerSchool is protected and can only be accessed by School Admin or Teachers and Staff.  Could I possibly swing using my Wife's credentials to gain access and do what I want to do? Possibly, but it isn't worth risking her career to integrate something so minial.  I have reached out to inquire about access individually as a developer, but have yet to hear back from their IT team.
 
+# Does It Work
+
+Well of course it does. I deployed this web application through 
+
+![Netlify](https://img.shields.io/static/v1?style=for-the-badge&message=Netlify&color=222222&logo=Netlify&logoColor=00C7B7&label=)
+
+Currently live and in use at [Here](https://jessiegrades.live).
+
 <details>
 <summary>Setup and Running This Web Application</summary>
 <br>
