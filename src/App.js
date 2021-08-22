@@ -38,7 +38,7 @@ const useStyles = makeStyles((theme) => ({
     height: '90vh',
   },
   input: {
-    width: 'auto',
+    width: '75%',
     color: '#a69540',
     '& .Mui-focused': {
       color: '#a69540',
