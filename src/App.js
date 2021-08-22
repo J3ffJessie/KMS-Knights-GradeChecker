@@ -33,6 +33,7 @@ const useStyles = makeStyles((theme) => ({
     paddingTop: '70px',
     color: '#a69540',
   },
+
   container: {
     height: '90vh',
   },
@@ -67,7 +68,8 @@ const useStyles = makeStyles((theme) => ({
   radio: {
     display: 'flex',
     justifyContent:'center',
-    flexDirection: 'column',
+    alignItems: 'center',
+    flexDirection: 'row',
     paddingLeft: '25px',
     paddingTop: '20px',
   },
