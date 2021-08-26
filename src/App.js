@@ -9,7 +9,7 @@ import { Radio } from '@material-ui/core';
 import { Box, Typography } from '@material-ui/core';
 import { InputAdornment } from '@material-ui/core';
 
-
+//Refactor the custom styling of elements to MUI standard in Documentation instead of tagging all the classNames
 const useStyles = makeStyles((theme) => ({
   root: {
     color: '#a69540',
@@ -23,6 +23,7 @@ const useStyles = makeStyles((theme) => ({
       color: '#a69540',
       fontWeight: 'bolder'      
     },
+    overflowX: 'hidden',
 },
   form: {
     display: 'flex',
@@ -32,12 +33,20 @@ const useStyles = makeStyles((theme) => ({
     paddingTop: '70px',
     color: '#a69540',
   },
+
   container: {
     height: '90vh',
   },
   input: {
     width: 'auto',
     color: '#a69540',
+    '& .Mui-focused': {
+      color: '#a69540',
+      fontWeight: 'bolder',
+    },
+    '& .MuiInput-underline:after': {
+      borderBottom: 'none',
+    },
   },
   typography: {
     display: 'flex',
@@ -61,6 +70,8 @@ const useStyles = makeStyles((theme) => ({
     justifyContent:'center',
     alignItems: 'center',
     flexDirection: 'row',
+    paddingLeft: '25px',
+    paddingTop: '20px',
   },
   buttonGroup: {
     display: 'flex',
@@ -174,7 +185,9 @@ const GradeCheck = () => {
       <TextField className={classes.input}  required id="standard-required" label="The Grade You Want" onChange = {(event) => setGradeWanted(event.target.value)} InputProps={{
         endAdornment: <InputAdornment position="end">%</InputAdornment>
       }} /> 
-      
+      <Typography variant='h5' component='h5' className={classes.typography}>
+        What is the next grade?
+      </Typography>
       <RadioGroup className={classes.radio} >
       <FormControlLabel value="Test/Quiz" control={<StyledRadio />} label="Test/Quiz" onClick={(event) => setGradeWeight('70')} />
       <FormControlLabel value="Classwork/Homework" control={<StyledRadio />} label="Class/Homework" onClick={(event) => setGradeWeight('30')} />
@@ -188,10 +201,10 @@ const GradeCheck = () => {
     </ButtonGroup>
 
     <Box>
-      <Typography variant='h3' component='h5' className={classes.typography}>
+      <Typography variant='h5' component='h5' className={classes.typography}>
         You Need a:
       </Typography>
-      <Typography variant='h2' component='h2' className={classes.typographyGrade}>
+      <Typography variant='h4' component='h4' className={classes.typographyGrade}>
       {finalGrade}%
       </Typography>
       
