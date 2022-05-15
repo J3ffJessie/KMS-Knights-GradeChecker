@@ -44,7 +44,7 @@ export default function Header() {
           </Typography>
         </Toolbar>
           <Link to="/" style={linkStyle}>Grade Calculator </Link>
-          <Link to="/finalgrade" style={linkStyle} >Final Grade</Link>
+          <Link to="/finalgrade" style={linkStyle} >Algebra Final</Link>
 
       </AppBar>
     </div>

@@ -145,21 +145,28 @@ function StyledRadio(props) {
 
 //This is the start of the actual component for the grade calculator
 
-const FinalGrade = () => {
+const GradeCheck = () => {
 
   const classes = useStyles();
 
-  // change these to reflect the semesters and grades for each semester
   const [currentGrade, setCurrentGrade] = useState(0);
   const [gradeWanted, setGradeWanted] = useState(0);
-  const [gradeWeight, setGradeWeight] = useState(0);
+  const gradeWeight = 15;
   const [finalGrade, setFinalGrade] = useState(0);
-
+ // const [gradeWeight, setGradeWeight] = useState(0);
 
   function checkGrade() {
 
     let final=(gradeWanted-currentGrade * (100.0 - gradeWeight)/ 100.0)/(gradeWeight/ 100.0)
     
+    // This code will keep the finalGrade from going past 100% needed on the next assignment.  Currently it is requested that the %
+    // go above 100 so that students understand that they will need more than one assignment or test to raise their grade.
+    
+    // if(final > 100) {
+    //   setFinalGrade(100)    
+    // } else {
+    //   setFinalGrade(Number(final.toFixed(2)));
+    // }
     setFinalGrade(Number(final.toFixed(2)));
   };
 
@@ -181,9 +188,11 @@ const FinalGrade = () => {
       <Typography variant='h5' component='h5' className={classes.typography}>
         What is the next grade?
       </Typography>
+      {/* 
       <RadioGroup className={classes.radio} >
-      <FormControlLabel value="Final Assessment" control={<StyledRadio />} label="Final Assessment" checked="checked" onClick={(event) => setGradeWeight('30')} />
+      <FormControlLabel value="Class/Homework" control={<StyledRadio />} label="Final Assessment" onClick={(event) => setGradeWeight('15')} />
       </RadioGroup>
+       */}
     </form>
 
     <ButtonGroup className={classes.buttonGroup}>
@@ -205,4 +214,4 @@ const FinalGrade = () => {
   );
 };
 
-export default FinalGrade;
+export default GradeCheck;
