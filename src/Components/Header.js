@@ -4,6 +4,7 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
+import {Link} from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -22,6 +23,15 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+const linkStyle = {
+  color: '#a69540',
+  display: 'flex',
+  position: 'relative',
+  justifyContent: 'center',
+  paddingBottom: '5px',
+};
+
+
 export default function Header() {
   const classes = useStyles();
 
@@ -33,6 +43,9 @@ export default function Header() {
             KNIGHTS
           </Typography>
         </Toolbar>
+          <Link to="/" style={linkStyle}>Grade Calculator </Link>
+          <Link to="/finalgrade" style={linkStyle} >Final Grade</Link>
+
       </AppBar>
     </div>
   );
