@@ -12,3 +12,16 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+input {
+  text-align: center;
+  color: #ff6900 !important;
+}
+
+label {
+  color: #fff !important;
+}
+
+p {
+  color: #fff !important;
+}

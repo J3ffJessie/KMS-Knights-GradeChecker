@@ -5,6 +5,8 @@
 
 This application was built in collaboration with my Wife.  She voiced concern over how much time was spent going over grades with students and how their next assignment or test would impact their grade.  She asked if I could do anything to help her out (which of course I said I could).  I set out and built a simple concept in HTML, CSS and JS [Here](https://github.com/J3ffJessie/KMS-Grade-Checker).  After showing her this example and explaining what changes I would make and how I would go about it, she approved and I set out and got to work.
 
+Favicon credit to <a href="https://www.flaticon.com/free-icons/snake" title="snake icons">Snake icons created by Darius Dan - Flaticon</a>
+
 ## Building the project
 Tech used for building this project includes:
 

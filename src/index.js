@@ -6,18 +6,14 @@ import Header from "./Components/Header";
 import Footer from "./Components/Footer";
 import reportWebVitals from "./reportWebVitals";
 import FinalGrade from "./Components/finalgrade";
-import { 
-  BrowserRouter,
-  Routes,
-  Route,
- } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 ReactDOM.render(
   <BrowserRouter>
-  <Header />
-  <Routes>
-    <Route path="/" element={<App />} />
-    <Route path="finalGrade" element={<FinalGrade />} />
+    <Header />
+    <Routes>
+      <Route path="/" element={<App />} />
+      <Route path="finalGrade" element={<FinalGrade />} />
     </Routes>
     <Footer />
   </BrowserRouter>,
