@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
     position: "sticky",
     justifyContent: "center",
     alignItems: "center",
-    fontSize: "2rem",
+    fontSize: "1.35rem",
     textShadow:
       "-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000, -2px 0 0 #000, 2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000",
     fontFamily: "Rye, cursive",
@@ -38,7 +38,7 @@ export default function Footer() {
       <AppBar position="static" className={classes.root}>
         <Toolbar>
           <Typography variant="p" className={classes.title}>
-            Made for Students with 💙 by Mrs. Jessie
+            Made with 💙
           </Typography>
         </Toolbar>
       </AppBar>
